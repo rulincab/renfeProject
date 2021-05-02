@@ -1,16 +1,13 @@
 package pageObjects;
 
-import core.DriverFactory;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.PageFactory;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class HeaderPage extends BasePage {
+public class HeaderPage {
 
     public HeaderPage(WebDriver browser){
-      super(browser, 5);
+
     }
 
     //locators

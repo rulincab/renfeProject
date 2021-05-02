@@ -4,12 +4,19 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class FlightParamPage extends BasePage{
+public class FlightParamPage{
+
+    private WebDriver driver;
+    private WebDriverWait wait;
 
     public FlightParamPage(WebDriver browser){
-        super(browser, 5);
+        this.driver = driver;
+        PageFactory.initElements(driver, this);
+        wait = new WebDriverWait(driver, 20);
     }
 
     @FindBy(id = "origin")
@@ -35,6 +42,29 @@ public class FlightParamPage extends BasePage{
 
 @FindBy(css = "button[type='submit']")
     private WebElement submitButton;
+
+@FindBy(css = "rf-awesomplete#origin .rf-input-autocomplete__txt-error")
+private WebElement errorMessage;
+
+public boolean lauchRenfe(String url){
+    driver.get(url);
+    return tripType.isDisplayed();
+}
+
+public void sendTextOrigin(String text){
+    originField.sendKeys(text);
+    //wait.until(ExpectedConditions.elementToBeClickable(originField)).sendKeys(text);
+}
+
+    public void sendTextDestination(String text){
+        destinationField.sendKeys(text);
+        //wait.until(ExpectedConditions.elementToBeClickable(departure)).sendKeys(text);
+    }
+
+    public String getErrorMessage(){
+    return errorMessage.getText();
+    }
+
 
 
 }
