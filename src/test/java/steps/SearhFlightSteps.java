@@ -1,13 +1,15 @@
 package steps;
 
+import cucumber.api.Scenario;
 import cucumber.api.java.Before;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.remote.DesiredCapabilities;
-import org.openqa.selenium.remote.RemoteWebDriver;
+import cucumber.api.java.After;
 import org.testng.Assert;
 import pageObjects.FlightParamPage;
 
@@ -44,5 +46,17 @@ public class SearhFlightSteps {
     public void it_shows_the_error_message_when_the_fields_text_are_incorrect(String expectedMessage) throws Throwable {
         searhfield = new FlightParamPage(driver);
         Assert.assertEquals(searhfield.getErrorMessage(), expectedMessage);
+    }
+
+    @After
+    public void tearDown(Scenario scenario){
+        if(scenario.isFailed())
+            takeScreenshot(scenario);
+        driver.quit();
+    }
+
+    private void takeScreenshot(Scenario scenario){
+        final byte[] screenshot = ((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES);
+        scenario.embed(screenshot, "image/png");
     }
 }
