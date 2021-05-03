@@ -1,0 +1,110 @@
+[
+  {
+    "line": 3,
+    "elements": [
+      {
+        "line": 7,
+        "name": "",
+        "description": "",
+        "type": "background",
+        "keyword": "Background",
+        "steps": [
+          {
+            "result": {
+              "duration": 3275118379,
+              "status": "passed"
+            },
+            "line": 8,
+            "name": "The User is on the home page",
+            "match": {
+              "location": "SearhFlightSteps.the_User_is_on_the_home_page()"
+            },
+            "keyword": "Given "
+          }
+        ]
+      },
+      {
+        "before": [
+          {
+            "result": {
+              "duration": 1550036364,
+              "status": "passed"
+            },
+            "match": {
+              "location": "SearhFlightSteps.setUp()"
+            }
+          }
+        ],
+        "line": 11,
+        "name": "Get error message wieh the fields are not correcly",
+        "description": "This scenario consists of doing a validation about\nthe error message when de files are wrong",
+        "id": "buy-ticket;get-error-message-wieh-the-fields-are-not-correcly",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 1435793879,
+              "status": "passed"
+            },
+            "line": 14,
+            "name": "The user types wrong words in the fields \"a\" and \"a\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "a",
+                  "offset": 42
+                },
+                {
+                  "val": "a",
+                  "offset": 50
+                }
+              ],
+              "location": "SearhFlightSteps.the_user_types_wrong_words_in_the_fields_and(String,String)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 56978028,
+              "status": "passed"
+            },
+            "line": 15,
+            "name": "it shows the error message \"Seleccione una estación válida\" when the fields text are incorrect",
+            "match": {
+              "arguments": [
+                {
+                  "val": "Seleccione una estación válida",
+                  "offset": 28
+                }
+              ],
+              "location": "SearhFlightSteps.it_shows_the_error_message_when_the_fields_text_are_incorrect(String)"
+            },
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "line": 9,
+            "name": "@story1"
+          },
+          {
+            "line": 10,
+            "name": "@case1"
+          }
+        ]
+      }
+    ],
+    "name": "Buy Ticket",
+    "description": "This feature allows searching cities with specific name\nset date and different options to buy",
+    "id": "buy-ticket",
+    "keyword": "Feature",
+    "uri": "BuyTicket.feature",
+    "tags": [
+      {
+        "line": 1,
+        "name": "@buyTicket"
+      }
+    ]
+  }
+]

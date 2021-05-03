@@ -29,8 +29,12 @@ public class FlightParamPage{
     @FindBy(id = "first-input")
     private WebElement departure;
 
-    @FindBy(id = "trupType")
-    private WebElement tripType;
+    @FindBy(css = "rf-select[id='tripType'] > div:nth-of-type(1)")
+    private WebElement tripTypeSeleted;
+
+    @FindBy(css = "rf-select[id='tripType")
+    private WebElement tripTypeText;
+
 
     @FindBy(id = "passengers")
     private WebElement passengers;
@@ -47,9 +51,16 @@ public class FlightParamPage{
 @FindBy(css = "rf-awesomplete#origin .rf-input-autocomplete__txt-error")
 private WebElement errorMessage;
 
+@FindBy(css = "input[aria-label='Fecha vuelta']")
+private WebElement returnDate;
+
+@FindBy(css = "button[class='rf-select__list-text']")
+private WebElement firstTripType;
+
+
 public boolean lauchRenfe(String url){
     driver.get(url);
-    return tripType.isDisplayed();
+    return tripTypeSeleted.isDisplayed();
 }
 
 public void sendTextOrigin(String text){
@@ -89,6 +100,17 @@ public void sendTextOrigin(String text){
         return value;
 
     }
+
+    public String returnDateField(){
+
+    return wait.until(ExpectedConditions.elementToBeClickable(tripTypeSeleted)).getText();
+    }
+
+    public void tryTypeOnlyGo(){
+        wait.until(ExpectedConditions.elementToBeClickable(tripTypeSeleted)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(firstTripType)).click();
+    }
+
 
 
 }

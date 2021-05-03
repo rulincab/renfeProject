@@ -4,3 +4,7 @@ tests/RenfeBuyingTest.java
  tests.RenfeBuyingTest
 pageObjects/FlightParamPage.java
  pageObjects.FlightParamPage
+runners/TestRunner.java
+ runners.TestRunner
+steps/SearhFlightSteps.java
+ steps.SearhFlightSteps

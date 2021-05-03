@@ -53,6 +53,15 @@ public void mandatoryFields(){
 
     }
 
+    @Test
+    public void onlyGo(){
+        searhfield = new FlightParamPage(driver);
+        searhfield.sendTextOrigin("madrid");
+        searhfield.selectFirstValueOrigin();
+        searhfield.tryTypeOnlyGo();
+        Assert.assertEquals(searhfield.returnDateField(), "Sólo ida");
+    }
+
 @AfterClass
     public  void clean(){
     }

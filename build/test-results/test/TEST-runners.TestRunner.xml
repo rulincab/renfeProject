@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="runners.TestRunner" tests="1" skipped="0" failures="0" errors="0" timestamp="2021-05-03T19:01:39" hostname="US-C02F235LMD6M." time="6.353">
+  <properties/>
+  <testcase name="feature[0](Buy Ticket)" classname="runners.TestRunner" time="6.353"/>
+  <system-out><![CDATA[@buyTicket
+Feature: Buy Ticket
+  This feature allows searching cities with specific name
+  set date and different options to buy
+
+  Background:                          ?[90m# BuyTicket.feature:7?[0m
+    ?[32mGiven ?[0m?[32mThe User is on the home page?[0m ?[90m# SearhFlightSteps.the_User_is_on_the_home_page()?[0m
+
+  @story1 @case1
+  Scenario: Get error message wieh the fields are not correcly                                          ?[90m# BuyTicket.feature:11?[0m
+    This scenario consists of doing a validation about
+    the error message when de files are wrong
+
+    ?[32mWhen ?[0m?[32mThe user types wrong words in the fields "?[0m?[32m?[1ma?[0m?[32m" and "?[0m?[32m?[1ma?[0m?[32m"?[0m                                           ?[90m# SearhFlightSteps.the_user_types_wrong_words_in_the_fields_and(String,String)?[0m
+    ?[32mThen ?[0m?[32mit shows the error message "?[0m?[32m?[1mSeleccione una estación válida?[0m?[32m" when the fields text are incorrect?[0m ?[90m# SearhFlightSteps.it_shows_the_error_message_when_the_fields_text_are_incorrect(String)?[0m
+]]></system-out>
+  <system-err><![CDATA[Starting ChromeDriver 89.0.4389.23 (61b08ee2c50024bab004e48d2b1b083cdbdac579-refs/branch-heads/4389@{#294}) on port 1599
+Only local connections are allowed.
+Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.
+ChromeDriver was started successfully.
+[1620068500.942][WARNING]: This version of ChromeDriver has not been tested with Chrome version 90.
+May 03, 2021 2:01:40 PM org.openqa.selenium.remote.ProtocolHandshake createSession
+INFO: Detected dialect: W3C
+]]></system-err>
+</testsuite>
