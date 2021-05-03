@@ -5,6 +5,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import pageObjects.FlightParamPage;
 
@@ -14,7 +15,8 @@ public class RenfeBuyingTest {
     FlightParamPage searhfield;
 
     private static String expectedMessage = "Seleccione una estación válida";
-    @BeforeClass
+    private static String expectedListTitle = "Renfe - Lista de Trenes";
+    @BeforeMethod
     public void setUp(){
         //System.setProperty("webdriver.gecko.driver", "D:\\CURSO\\Drivers\\geckodriver.exe");
         System.setProperty("webdriver.chrome.driver", "/Users/esalgue/Desktop/drivers/chromedriver");
@@ -47,6 +49,9 @@ public void mandatoryFields(){
         searhfield.sendTextDestination("barcelona");
         searhfield.selectFirstValueDestination();
         Assert.assertEquals(searhfield.disabledButton(), true);
+        searhfield.clickButton();
+        Assert.assertEquals(driver.getTitle(), expectedListTitle);
+
     }
 
 @AfterClass

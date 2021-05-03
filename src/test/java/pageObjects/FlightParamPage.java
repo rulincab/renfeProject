@@ -82,5 +82,9 @@ public void sendTextOrigin(String text){
         value.sendKeys(Keys.ENTER);
     }
 
+    public void clickButton(){
+        wait.until(ExpectedConditions.elementToBeClickable(submitButton)).click();
+    }
+
 
 }
