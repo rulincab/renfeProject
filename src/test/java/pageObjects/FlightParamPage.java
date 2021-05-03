@@ -14,15 +14,15 @@ public class FlightParamPage{
     private WebDriverWait wait;
 
     public FlightParamPage(WebDriver browser){
-        this.driver = driver;
+        this.driver = browser;
         PageFactory.initElements(driver, this);
         wait = new WebDriverWait(driver, 20);
     }
 
-    @FindBy(id = "origin")
+    @FindBy(css = "input[id='origin']")
     private WebElement originField;
 
-    @FindBy(id = "destination")
+    @FindBy(css = "input[id='destination']")
     private WebElement destinationField;
 
     @FindBy(id = "first-input")
@@ -52,17 +52,16 @@ public boolean lauchRenfe(String url){
 }
 
 public void sendTextOrigin(String text){
-    originField.sendKeys(text);
-    //wait.until(ExpectedConditions.elementToBeClickable(originField)).sendKeys(text);
+
+    wait.until(ExpectedConditions.elementToBeClickable(originField)).sendKeys(text);
 }
 
     public void sendTextDestination(String text){
-        destinationField.sendKeys(text);
-        //wait.until(ExpectedConditions.elementToBeClickable(departure)).sendKeys(text);
+    wait.until(ExpectedConditions.elementToBeClickable(departure)).sendKeys(text);
     }
 
     public String getErrorMessage(){
-    return errorMessage.getText();
+    return wait.until(ExpectedConditions.visibilityOf(errorMessage)).getText();
     }
 
 

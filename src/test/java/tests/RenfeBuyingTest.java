@@ -1,37 +1,44 @@
 package tests;
 
-import core.DriverFactory;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import pageObjects.FlightParamPage;
 
-public class RenfeBuyingTest extends TestBase {
+public class RenfeBuyingTest {
 
-
-    FlightParamPage searhfield = null;
+    private WebDriver driver;
+    FlightParamPage searhfield;
 
     private static String expectedMessage = "Seleccione una estación válida";
-
     @BeforeClass
-    public void getRenfe(){
-        getRenfe();
+    public void setUp(){
+        //System.setProperty("webdriver.gecko.driver", "D:\\CURSO\\Drivers\\geckodriver.exe");
+        System.setProperty("webdriver.chrome.driver", "/Users/esalgue/Desktop/drivers/chromedriver");
+
+        driver = new ChromeDriver();
+        //driver = new FirefoxDriver();
+
+        driver.get("https://www.renfe.com/es/es");
+        driver.manage().window().maximize();
+
     }
 
     @Test
 public void mandatoryFields(){
+        searhfield = new FlightParamPage(driver);
         searhfield.sendTextOrigin("a");
         searhfield.sendTextDestination("a");
         Assert.assertEquals(searhfield.getErrorMessage(), expectedMessage);
 
     }
 
+
+
 @AfterClass
     public  void clean(){
-       cleanUp();
     }
 }

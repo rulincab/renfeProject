@@ -1,8 +1,6 @@
-tests/RenfeBuyingTest.java
- tests.RenfeBuyingTest
-pageObjects/HeaderPage.java
- pageObjects.HeaderPage
 pageObjects/FlightParamPage.java
  pageObjects.FlightParamPage
-tests/TestBase.java
- tests.TestBase
+pageObjects/HeaderPage.java
+ pageObjects.HeaderPage
+tests/RenfeBuyingTest.java
+ tests.RenfeBuyingTest
