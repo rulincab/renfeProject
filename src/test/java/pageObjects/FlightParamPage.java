@@ -53,7 +53,7 @@ public boolean lauchRenfe(String url){
 }
 
 public void sendTextOrigin(String text){
-
+    originField.clear();
     wait.until(ExpectedConditions.elementToBeClickable(originField)).sendKeys(text);
 }
 
@@ -66,6 +66,7 @@ public void sendTextOrigin(String text){
 
     }
     public void sendTextDestination(String text){
+    destinationField.clear();
     wait.until(ExpectedConditions.elementToBeClickable(destinationField)).sendKeys(text);
     }
 
@@ -82,8 +83,11 @@ public void sendTextOrigin(String text){
         value.sendKeys(Keys.ENTER);
     }
 
-    public void clickButton(){
+    public boolean clickButton(){
+        boolean value = submitButton.isEnabled();
         wait.until(ExpectedConditions.elementToBeClickable(submitButton)).click();
+        return value;
+
     }
 
 

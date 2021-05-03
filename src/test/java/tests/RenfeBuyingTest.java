@@ -16,7 +16,7 @@ public class RenfeBuyingTest {
 
     private static String expectedMessage = "Seleccione una estación válida";
     private static String expectedListTitle = "Renfe - Lista de Trenes";
-    @BeforeMethod
+    @BeforeClass
     public void setUp(){
         //System.setProperty("webdriver.gecko.driver", "D:\\CURSO\\Drivers\\geckodriver.exe");
         System.setProperty("webdriver.chrome.driver", "/Users/esalgue/Desktop/drivers/chromedriver");
@@ -46,10 +46,9 @@ public void mandatoryFields(){
         searhfield = new FlightParamPage(driver);
         searhfield.sendTextOrigin("madrid");
         searhfield.selectFirstValueOrigin();
-        searhfield.sendTextDestination("barcelona");
+        searhfield.sendTextDestination("barcelon");
         searhfield.selectFirstValueDestination();
-        Assert.assertEquals(searhfield.disabledButton(), true);
-        searhfield.clickButton();
+        Assert.assertEquals(searhfield.clickButton(), true);
         Assert.assertEquals(driver.getTitle(), expectedListTitle);
 
     }
