@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="tests.RenfeBuyingTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2021-05-03T13:26:35" hostname="US-C02F235LMD6M." time="2.016">
+<testsuite name="tests.RenfeBuyingTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2021-05-03T13:59:04" hostname="US-C02F235LMD6M." time="1.797">
   <properties/>
-  <testcase name="mandatoryFields" classname="tests.RenfeBuyingTest" time="2.016"/>
+  <testcase name="searcTicket" classname="tests.RenfeBuyingTest" time="1.797"/>
   <system-out><![CDATA[]]></system-out>
-  <system-err><![CDATA[Starting ChromeDriver 89.0.4389.23 (61b08ee2c50024bab004e48d2b1b083cdbdac579-refs/branch-heads/4389@{#294}) on port 48544
+  <system-err><![CDATA[Starting ChromeDriver 89.0.4389.23 (61b08ee2c50024bab004e48d2b1b083cdbdac579-refs/branch-heads/4389@{#294}) on port 47007
 Only local connections are allowed.
 Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.
 ChromeDriver was started successfully.
-[1620048392.351][WARNING]: This version of ChromeDriver has not been tested with Chrome version 90.
-May 03, 2021 8:26:32 AM org.openqa.selenium.remote.ProtocolHandshake createSession
+[1620050341.373][WARNING]: This version of ChromeDriver has not been tested with Chrome version 90.
+May 03, 2021 8:59:01 AM org.openqa.selenium.remote.ProtocolHandshake createSession
 INFO: Detected dialect: W3C
 ]]></system-err>
 </testsuite>

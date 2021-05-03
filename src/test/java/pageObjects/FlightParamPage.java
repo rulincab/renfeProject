@@ -1,5 +1,6 @@
 package pageObjects;
 
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -56,14 +57,30 @@ public void sendTextOrigin(String text){
     wait.until(ExpectedConditions.elementToBeClickable(originField)).sendKeys(text);
 }
 
+    public void selectFirstValueOrigin(){
+    selectValue(originField);
+    }
+
+    public void selectFirstValueDestination(){
+        selectValue(destinationField);
+
+    }
     public void sendTextDestination(String text){
-    wait.until(ExpectedConditions.elementToBeClickable(departure)).sendKeys(text);
+    wait.until(ExpectedConditions.elementToBeClickable(destinationField)).sendKeys(text);
     }
 
     public String getErrorMessage(){
     return wait.until(ExpectedConditions.visibilityOf(errorMessage)).getText();
     }
 
+    public boolean disabledButton(){
+        return submitButton.isEnabled();
+    }
+
+    public void selectValue(WebElement value){
+        wait.until(ExpectedConditions.elementToBeClickable(value)).sendKeys(Keys.DOWN);
+        value.sendKeys(Keys.ENTER);
+    }
 
 
 }

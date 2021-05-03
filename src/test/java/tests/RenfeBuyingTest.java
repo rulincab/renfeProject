@@ -33,10 +33,21 @@ public void mandatoryFields(){
         searhfield.sendTextOrigin("a");
         searhfield.sendTextDestination("a");
         Assert.assertEquals(searhfield.getErrorMessage(), expectedMessage);
-
     }
-
-
+    @Test
+    public void disabledButtons(){
+        searhfield = new FlightParamPage(driver);
+       Assert.assertEquals(searhfield.disabledButton(), false);
+    }
+    @Test
+    public void searcTicket(){
+        searhfield = new FlightParamPage(driver);
+        searhfield.sendTextOrigin("madrid");
+        searhfield.selectFirstValueOrigin();
+        searhfield.sendTextDestination("barcelona");
+        searhfield.selectFirstValueDestination();
+        Assert.assertEquals(searhfield.disabledButton(), true);
+    }
 
 @AfterClass
     public  void clean(){
